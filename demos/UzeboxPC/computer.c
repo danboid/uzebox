@@ -73,7 +73,7 @@ void _init_fdc(){
 }
 
 void computer_Boot(void){
-	printf_P(PSTR("Uzebox Computer (c) 2023 Uze\r\nCPU: ATmega644 @ 28Mhz\r\nPhysical SPI RAM Installed: "));
+	printf_P(PSTR("Uzebox Computer v1.1 (c) 2020-2025 Uze\r\nCPU: ATmega644 @ 28Mhz\r\nPhysical SPI RAM Installed: "));
 
 	//Initialize the SPI RAM chip
 	u8 ramSize=_spiram_start();

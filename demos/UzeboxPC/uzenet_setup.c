@@ -8,6 +8,10 @@
  *  Created on: Oct 16, 2015
  *  Author: Uze
  *
+ * Revs:
+ * v1.1 - Original
+ * v1.2 - Bug fix: Added wifi_Echo(false) when exiting.
+ *
  */
 #include <stdbool.h>
 #include <string.h>
@@ -199,6 +203,7 @@ void quit(int status){
 		if(terminal_HasChar()) terminal_GetChar(); //purge keyboard buffer
 	}
 
+	wifi_Echo(false);
 	wifi_Disable();
 	terminal_Clear();
 
@@ -207,7 +212,7 @@ void quit(int status){
 void uzenet_Setup(){
 	terminal_Clear();
 
-	printf_P(PSTR("\x1b[7m Uzenet Setup v1.1 \x1b[0m\r\n\r\n"));
+	printf_P(PSTR("\x1b[7m Uzenet Setup v1.2 \x1b[0m\r\n\r\n"));
 
 	//initialize module
 	wifi_Echo(false);
@@ -258,7 +263,7 @@ void uzenet_Setup(){
 	};
 
 	terminal_Clear();
-	printf_P(PSTR("\x1b[7m Uzenet Setup v1.1 - ESP8266 Initialized \x1b[0m\r\n\r\n"));
+	printf_P(PSTR("\x1b[7m Uzenet Setup v1.2 - ESP8266 Initialized \x1b[0m\r\n\r\n"));
 	if(loadedFromFile){
 		printf_P(PSTR(" Wifi credentials loaded from UZENET.CFG file. Press Enter on the\r\n keyboard or the Start button on the P1 joypad."));
 	}else{

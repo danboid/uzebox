@@ -14,6 +14,10 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ *  Revisions
+ *  1.0 - initial release
+ *  1.1 - fixed bug in uzeconf utility that left uart echo on after setup
 */
 
 #include <stdbool.h>
