@@ -43,9 +43,7 @@
 #define BUTTONS_COUNT 1
 #define BUTTON_UNPRESSED 0
 #define BUTTON_PRESSED 1
-#define GAMEPAD 1
 #define MOUSE 2
-#define NOTHING 0
 
 
 char createMyButton(unsigned char x,unsigned char y,const char *normalMapPtr,const char *pushedMapPtr);
@@ -297,12 +295,6 @@ void InitMouse() {
         playDevice = 1;
         playPort = 1;
         actionButton = BTN_MOUSE_LEFT;
-    }
-    // Default to Gamepad Port 1
-    else {
-        playDevice = 0; // Gamepad mode
-        playPort = 0;
-        actionButton = BTN_A;
     }
 }
 
