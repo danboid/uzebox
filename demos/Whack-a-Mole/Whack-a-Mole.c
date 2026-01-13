@@ -43,7 +43,6 @@
 #define BUTTONS_COUNT 1
 #define BUTTON_UNPRESSED 0
 #define BUTTON_PRESSED 1
-#define GAMEPAD 1
 #define MOUSE 2
 
 
