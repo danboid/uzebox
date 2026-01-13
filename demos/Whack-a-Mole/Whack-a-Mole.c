@@ -43,6 +43,7 @@
 #define BUTTONS_COUNT 1
 #define BUTTON_UNPRESSED 0
 #define BUTTON_PRESSED 1
+#define GAMEPAD 1
 #define MOUSE 2
 
 
@@ -53,7 +54,7 @@ void doStart();
 void processMyButtons();
 void processMoles();
 void WaitKey();
-void InitMouse();
+void InitControllers();
 void menu();
 void PrintSpeed();
 
@@ -131,7 +132,7 @@ int main(){
 	SetSpritesTileTable(cursor_tileset);
 
 	EnableSnesMouse(0,map_cursor);
-	InitMouse();
+	InitControllers();
 	InitMusicPlayer(patches);
 	SetMouseSensitivity(mouseSpeed);
 
@@ -278,7 +279,7 @@ void menu(){
 	}
 }
 
-void InitMouse() {
+void InitControllers() {
     // Wait a few frames for the mouse hardware to settle/handshake
     WaitVsync(10);
 
@@ -295,6 +296,12 @@ void InitMouse() {
         playDevice = 1;
         playPort = 1;
         actionButton = BTN_MOUSE_LEFT;
+    }
+    // Default to Gamepad Port 1
+    else {
+        playDevice = 0; // Gamepad mode
+        playPort = 0;
+        actionButton = BTN_A;
     }
 }
 
